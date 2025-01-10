@@ -3,7 +3,7 @@ import tensorflow as tf
 print('Loading model ...')
 model = tf.keras.models.load_model('saved_model')
 
-class_names = ['Dry_skin','Normal_skin','Oil_skin']
+class_names = ['Low','Moderate','Severe']
 
 def load_and_prep_image(filename, img_shape=224):
   img = tf.io.read_file(filename)
@@ -38,4 +38,4 @@ def predict_class(filename):
   print('Predicted class:', pred_class)
   return pred_class
 
-predict_class('test_image.jpg')
+predict_class('test_image.jpeg')
